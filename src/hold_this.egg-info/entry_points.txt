@@ -1,2 +1,0 @@
-[console_scripts]
-hold = hold_this.hold_this:main
