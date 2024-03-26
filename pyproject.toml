@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hold-this"
-version = "0.1.4"
+version = "0.1.6"
 description = "hold anything."
 requires-python = ">=3.9"
 readme = {file = "README.md", content-type = "text/markdown"}
@@ -30,5 +30,5 @@ dependencies = [
 hold = "hold_this.hold_this:main"
 
 [project.urls]
-Homepage = 'https://github.com/d33pster/hold'
-Issues = 'https://github.com/d33pster/hold/issues'
+Homepage = 'https://github.com/d33pster/hold-this'
+Issues = 'https://github.com/d33pster/hold-this/issues'
