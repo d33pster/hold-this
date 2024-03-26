@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/hold_this/__init__.py
+src/hold_this/hold_this.py
+src/hold_this.egg-info/PKG-INFO
+src/hold_this.egg-info/SOURCES.txt
+src/hold_this.egg-info/dependency_links.txt
+src/hold_this.egg-info/entry_points.txt
+src/hold_this.egg-info/requires.txt
+src/hold_this.egg-info/top_level.txt
