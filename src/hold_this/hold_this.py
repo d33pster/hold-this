@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+__version__ = '0.1.6'
+
 from sys import argv as gotargs
 from os import listdir
 from optioner import options
@@ -38,6 +40,8 @@ def hold(dothis: str, argCTRL: options | None, dothat=[]):
                     print(f'\n{_.BLUE}hold>{_.RESET} run \'cd {f}\' to go into the cloned directory')
         elif dothis=='-h' or dothis=='--help':
             hold_help()
+        elif dothis=='-v' or dothis=='--version':
+            version()
 
     _allfiles = None
     _foundfiles = None
@@ -55,6 +59,8 @@ def hold_help():
         stdscr.addstr('     - ?help? -\n\n')
         stdscr.addstr('  |    -h or --help\n')
         stdscr.addstr('  |         => show this help text.\n  |\n')
+        stdscr.addstr('  |    -v or --version\n')
+        stdscr.addstr('  |         => show version.\n  |\n')
         stdscr.addstr('  |    -g or --github\n')
         stdscr.addstr('  |         => git clone repository\n')
         stdscr.addstr('  |         format: <username>/repository> or link')
@@ -71,6 +77,12 @@ def hold_help():
     
     exit(0)
 
+def version():
+    print(f'{_.BLUE}hold-this{_.RESET} - {_.BLACK}copyright Soumyo Deep Gupta{_.RESET}')
+    print(f'            version {_.RED}v{__version__}.{_.RESET}')
+    print(f'            author: d33pster, github: {_.LIGHTBLUE_EX}https://github.com/d33pster{_.RESET}')
+    exit(0)
+
 def recommend(arg: str):
     if searchin('^\w+/\w+$', arg)!=None:
         print(f'{_.YELLOW}hold>{_.RESET} Arguments Missing. Perhaps \'-g\' option might be missing')
@@ -83,9 +95,9 @@ def main():
     # colorama init
     color()
     # define short arguments
-    shortargs = ['g', 'h']
+    shortargs = ['g', 'h', 'v']
     # define long arguments
-    longargs = ['github', 'help']
+    longargs = ['github', 'help', 'version']
     # define argument control
     argumentCTRL = options(shortargs, longargs, gotargs[1:])
     # get argument parse results
